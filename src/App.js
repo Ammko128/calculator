@@ -1,26 +1,54 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Calculator from './components/Calculator';
+import AdvancedCalculator from './components/AdvancedCalculator';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends React.Component {
+  state={
+    classicCalculator:false
+  }
+
+  render(){
+    return (
+      this.state.classicCalculator ? <div className="appDiv">
+      <Calculator />
+      <div className="advancedCalculator">
+        <button
+          className="advancedCalculator"
+          onClick={() => this.setState({classicCalculator:false})}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          Advanced Calculator
+        </button>
+      </div>
+        <div className="homePageDiv">
+          <button
+            className="homePage"
+            onClick={() => window.location.href = "http://ammarveljagic.me"}
+          >
+            Back to home page
+          </button>
+        </div>
+      </div> : <div className="appDiv">
+      <AdvancedCalculator />
+      <div className="classicCalculatorDiv">
+        <button
+          className="classicCalculator"
+          onClick={() => this.setState({classicCalculator:true})}
+        >
+          Classic Calculator
+        </button>
+      </div>
+        <div className="homePageDiv">
+          <button
+            className="homePage"
+            onClick={() => window.location.href = "http://ammarveljagic.me"}
+          >
+            Back to home page
+          </button>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

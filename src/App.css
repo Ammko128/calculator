@@ -1,38 +1,89 @@
-.App {
-  text-align: center;
+.appDiv{
+  position:absolute;
+  width:100%;
+  text-align:center;
+}
+.appDiv .calculatorDiv{
+  width:300px;
+  height:480px;
+  background-color:rgb(9, 114, 188);
+  border-radius:15px;
+  position:relative;
+  margin: 10px auto;
+}
+.appDiv .calculatorDiv.advanced{
+  height: 560px;
+}
+.appDiv .calculatorDiv .calculationStringDiv{
+  text-align:right;
+  width:90%;
+  height:40px;
+  border: solid 1px #000;
+  border-radius:15px;
+  line-height:25px;
+  margin:auto;
+  top:20px;
+  background-color:rgb(180,210,255);
+  position:relative;
+  padding-right:10px;
+  font-size:20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.appDiv .calculatorDiv .row{
+  width:100%;
+  top:30px;
+  position:relative;
+  margin:auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.appDiv .calculatorDiv .row div{
+  display:inline-block;
+  width:60px;
+  margin:10px 5px;
+  border-radius:15px;
+  background-color:dodgerblue;
+  line-height:60px;
+  color:#fff;
+  cursor:pointer;
+  font-size:20px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.appDiv .calculatorDiv .row div.equals{
+  background-color:#2E8B57;
+  width:130px;
 }
 
-.App-link {
-  color: #61dafb;
+.appDiv .calculatorDiv .row div.operator{
+  background-color:#2E8B57;
+}
+.appDiv .calculatorDiv .row div.clear, .appDiv .calculatorDiv .row div.backspace{
+  background-color: indianred;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.appDiv .calculatorDiv .row div.parantheses, .appDiv .calculatorDiv .row div.mc, .appDiv .calculatorDiv .row div.mp, .appDiv .calculatorDiv .row div.ans{
+  background-color: sandybrown;
+  color:#000;
+}
+.appDiv .calculatorDiv .calculationStringDiv .secondaryStringDiv{
+  font-size:12px;
+  line-height:15px;
+  color:#808080;
+  margin-bottom:0;
+}
+button{
+  width:150px;
+  border-radius:10px;
+  border-color:aliceblue;
+  background-color:aquamarine;
+  cursor:pointer;
+}
+.appDiv .calculatorDiv .calculationStringDiv .closedParanthesesDiv{
+  display:inline-block;
+  color:#808080;
 }
